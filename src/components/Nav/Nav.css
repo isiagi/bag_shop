@@ -1,0 +1,16 @@
+.nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color:#BEA3A3;
+}
+
+.nav__sec > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color:#f1b3b3;
+    list-style: none;
+}

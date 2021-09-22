@@ -1,0 +1,33 @@
+.last{
+    background-color: #646464;
+    height: 140px;
+    margin-top: 20px;
+}
+
+footer > p{
+    padding-top: 10px;
+    color: #d8d5d5;
+    margin-top: 20px;
+}
+.footer__links{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  
+}
+.footer__links > p{
+    margin-top: 20px;
+    width: 100px;
+    color: #fff;
+}
+.footer__links > p > i{
+    background-color: #817e7e;
+    padding: 15px;
+    font-size: 20px;
+}
+@media screen and (max-width: 360px){
+    .last{
+        background-color: #646464;
+        height: 270px;
+    }
+}
