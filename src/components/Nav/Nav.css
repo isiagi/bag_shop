@@ -14,3 +14,63 @@
     background-color:#f1b3b3;
     list-style: none;
 }
+
+.headers {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+    gap: 1rem;
+    min-height: 8vh;
+    background-color:#f1b3b3;
+}
+
+.btn-nav {
+    border: none;
+    color: #777;
+    background: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn-nav:focus, .btn-nav:hover {
+    color: #000;
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown__menu {
+    position: absolute;
+    top: cal(100% + .25rem);
+    left: 0;
+    opacity: 0;
+    background-color: white;
+    padding: .95rem;
+    border-radius: .25rem;
+}
+
+.dropdown > .btn-nav:focus + .dropdown__menu {
+    opacity: 1;
+    z-index: 1;
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.information__grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+
+.dropdown-links > a:hover {
+    color: red;
+}
