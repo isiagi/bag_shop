@@ -25,7 +25,7 @@ export default function Detail() {
           <img src={d} alt="Bag" />
         </div>
         <div className="detail__word">
-          <div>
+          <div className="detail__text">
             <h2>Elegant Designer Bag</h2>
             <h3>
               <small>Price</small> Shs 20,000
@@ -62,7 +62,7 @@ export default function Detail() {
         </div>
       </section>
       <section className="detail__set">
-        <h3 style={{ textAlign: 'center', fontSize:'30px' }}>PREVIEWERS</h3>
+        <h3>PREVIEWERS</h3>
         <div style={{ marginTop: '20px' }}>
           <div className="detail__preview">
             <i class="fas fa-user-circle"></i>
@@ -91,8 +91,8 @@ export default function Detail() {
           </p>
         </div>
       </section>
-      <section>
-      <h3 style={{ textAlign: 'center', marginTop: '20px',marginBottom: '40px', fontSize:'30px' }}>Related Products</h3>
+      <section className="content">
+      <h3>Related Products</h3>
         <Multi />
       </section>
     </div>

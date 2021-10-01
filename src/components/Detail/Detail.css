@@ -81,3 +81,44 @@
     text-align: center;
     flex-direction: column;
 }
+
+.detail__set > h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.content > h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 640px) {
+    .detail__img {
+        width: 95vw;
+        height: 52vh;
+    }
+    .detail__img > img {
+        height: 50vh;
+    }
+    .detail__text {
+        text-align: center;
+    }
+    .detail__description {
+        text-align: center;
+        margin: 9px 0;
+    }
+    .detail__cart {
+        margin: auto;
+    }
+    .detail__info > div {
+        margin: 9px;
+    }
+    .content {
+        min-height: 90vh;
+    }
+    .content > h3, .detail__set > h3 {
+        font-size: 20px;
+    }
+}
