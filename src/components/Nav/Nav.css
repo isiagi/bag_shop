@@ -1,9 +1,16 @@
+.nav__container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .nav__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 8vh;
+    min-height: 7vh;
     background-color:#BEA3A3;
+    position: sticky;
 }
 
 .nav__sec > ul {
@@ -24,6 +31,9 @@
     gap: 1rem;
     min-height: 8vh;
     background-color:#f1b3b3;
+    position: fixed;
+    min-width: 100vw;
+    z-index: 3;
 }
 
 .btn-nav {
