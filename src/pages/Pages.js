@@ -11,7 +11,7 @@ export default function index() {
       <Switch>
       <ScrollToTop>
         <Route path="/" exact component={HomePage} />
-        <Route path="/detail" component={Detail}  />
+        <Route path="/details/:id" component={Detail}  exact/>
       </ScrollToTop>
       </Switch>
       </Router>
