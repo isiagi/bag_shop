@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Na() {
@@ -69,7 +70,7 @@ function Na() {
                 
             </div>
             <div className="dropdown">
-                <button className="btn-nav">Login</button>
+                <button className="btn-nav"> <Link to = "/Register"> Login</Link> </button>
                 
             </div>
         </div>
