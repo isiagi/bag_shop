@@ -38,11 +38,6 @@ export default function Detail() {
             </p>
           </div>
           <div className="detail__cart">
-            <div className="detail__select">
-              <button onClick={handleAdd}>Add</button>
-              <h3>{count}</h3>
-              <button onClick={handleSub}>Sub</button>
-            </div>
             <button className="detail__button">ADD TO CART</button>
           </div>
         </div>
