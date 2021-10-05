@@ -1,15 +1,16 @@
 import React from 'react'
 import './Nav.css'
+import {Link} from 'react-router-dom'
 
 function Nav() {
     return (
         <div>
            <div className="nav__wrapper">
                <div>
-                   <p>Logo</p>
+                   <Link to = "/">Logo</Link>
                </div>
               <div>
-                  <p>Cart <i class="fas fa-cart-arrow-down"></i></p>
+                  <Link to = "/Mycart">Cart <i class="fas fa-cart-arrow-down"></i></Link>
               </div>
            </div> 
            {/* <div className="nav__sec">
