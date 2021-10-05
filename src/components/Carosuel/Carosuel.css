@@ -1,0 +1,45 @@
+.carosuel__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.carosuel__wrapper {
+    width: 45%;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.carosuel__wrapper > h3 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.carosuel__div {
+    width: 35px;
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 640px) {
+    .carosuel__wrapper{
+        width: 100%;
+    }
+    .carosuel__wrapper > h3 {
+        font-size: 20px;
+    }
+    .carousel .slide img {
+        height: 20%;
+    }
+    .h3__card {
+        font-size: 20px;
+    }
+    .carosuel__div {
+        min-height: 57vh;
+    }
+    .card__wrapper {
+        margin-bottom: 2rem;
+    }
+}
+
+/* 768px */
