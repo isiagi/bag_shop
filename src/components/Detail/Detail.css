@@ -1,0 +1,124 @@
+.detail__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+.detail__img{
+    width: 40vw;
+    height: 70vh;
+}
+
+.detail__img > img {
+    width: inherit;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.detail__select {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail__select > button, h3 {
+    padding: 0 1rem;
+}
+
+.detail__word {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30vh;
+    flex-wrap: wrap;
+}
+
+.detail__button {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgb(243, 83, 83);
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.detail__info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 20vh;
+    align-items: center;
+}
+
+.detail__info > div {
+    border: 1px solid black;
+    max-width: 25rem;
+}
+
+.onee {
+    padding: 20px;
+}
+
+
+.detail__preview {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 550px;
+    background-color: orange;
+    padding: 20px;
+    margin: auto;
+}
+
+.detail__set {
+    background-color: rgb(184, 180, 180);
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.detail__set > h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.content > h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 640px) {
+    .detail__img {
+        width: 95vw;
+        height: 52vh;
+    }
+    .detail__img > img {
+        height: 50vh;
+    }
+    .detail__text {
+        text-align: center;
+    }
+    .detail__description {
+        text-align: center;
+        margin: 9px 0;
+    }
+    .detail__cart {
+        margin: auto;
+    }
+    .detail__info > div {
+        margin: 9px;
+    }
+    .content {
+        min-height: 90vh;
+    }
+    .content > h3, .detail__set > h3 {
+        font-size: 20px;
+    }
+}
