@@ -80,6 +80,31 @@ class EntryPage extends Component {
         console.log(err.message);
       });
   };
+  handleReset = (e) => {
+    alert('heyy')
+    e.preventDefault();
+    fetch('http://localhost:5000/api/v1/user/forgotPassword', {
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.input.email,
+      }),
+    })
+      .then((doc) => {
+        if (doc.ok) {
+          alert('hello')
+          return doc.json();
+        } else {
+          throw new Error('something has happened');
+        }
+      }).then((res) => {
+        localStorage.setItem("token", res.token);
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   currentView = () => {
     switch (this.state.currentView) {
       case "signUp":
