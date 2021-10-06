@@ -28,7 +28,7 @@ class EntryPage extends Component {
 
   handleSignUp = (e) => {
     e.preventDefault();
-    fetch('http://localhost:9000/api/v1/user/register', {
+    fetch('http://localhost:5000/api/v1/user/register', {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
       body: JSON.stringify({
@@ -54,7 +54,7 @@ class EntryPage extends Component {
   
   handleLogin = (e) => {
     e.preventDefault();
-    fetch('http://localhost:9000/api/v1/user/login', {
+    fetch('http://localhost:5000/api/v1/user/login', {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
       body: JSON.stringify({
@@ -133,11 +133,11 @@ class EntryPage extends Component {
               <legend>Log In</legend>
               <ul>
                 <li>
-                  <label for="username">Username:</label>
+                  <label for="email">Email:</label>
                   <input
-                    type="text"
-                    id="username"
-                    name="username"
+                    type="email"
+                    id="email"
+                    name="email"
                     onChange={this.handleChange}
                     required
                   />
