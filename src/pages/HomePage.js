@@ -5,7 +5,7 @@ import Mark from '../components/Mark/Mark';
 import Na from '../components/Nav/Na';
 import What from '../components/What/What';
 import Nav from '../components/Nav/Nav';
-import Footer from '../components/Footer/Footer';
+import Last from '../components/Last/Last';
 
 export default function HomePage() {
   return (
@@ -16,7 +16,7 @@ export default function HomePage() {
       <Mark />
       <What />
       <Body />
-      <Footer/>
+      <Last/>
     </div>
   );
 }
