@@ -1,5 +1,7 @@
-import React from 'react';
-import './Register.css';
+import React from "react";
+import Navbar from "./Navbar";
+import Last from "../Last/Last";
+import "./Register.css";
 
 const { Component } = React;
 
@@ -7,7 +9,7 @@ class EntryPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'signUp',
+      currentView: "signUp",
       input: {},
     };
   }
@@ -28,9 +30,9 @@ class EntryPage extends Component {
 
   handleSignUp = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/v1/user/register', {
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
+    fetch("http://localhost:5000/api/v1/user/register", {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
       body: JSON.stringify({
         email: this.state.input.email,
         password: this.state.input.password,
@@ -41,9 +43,10 @@ class EntryPage extends Component {
         if (doc.ok) {
           return doc.json();
         } else {
-          throw new Error('something has happened');
+          throw new Error("something has happened");
         }
-      }).then((res) => {
+      })
+      .then((res) => {
         localStorage.setItem("token", res.token);
         window.location.href = "/";
       })
@@ -51,12 +54,12 @@ class EntryPage extends Component {
         console.log(err.message);
       });
   };
-  
+
   handleLogin = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/v1/user/login', {
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
+    fetch("http://localhost:5000/api/v1/user/login", {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
       body: JSON.stringify({
         email: this.state.input.email,
         password: this.state.input.password,
@@ -66,9 +69,10 @@ class EntryPage extends Component {
         if (doc.ok) {
           return doc.json();
         } else {
-          throw new Error('something has happened');
+          throw new Error("something has happened");
         }
-      }).then((res) => {
+      })
+      .then((res) => {
         localStorage.setItem("token", res.token);
         window.location.href = "/";
       })
@@ -78,9 +82,9 @@ class EntryPage extends Component {
   };
   currentView = () => {
     switch (this.state.currentView) {
-      case 'signUp':
+      case "signUp":
         return (
-          <form>
+            <form>
             {this.state.input.email}
             <h2>Sign Up!</h2>
             <fieldset>
@@ -119,16 +123,18 @@ class EntryPage extends Component {
               </ul>
             </fieldset>
             <button onClick={this.handleSignUp}>Submit</button>
-            <button type="button" onClick={() => this.changeView('logIn')}>
+            <button type="button" onClick={() => this.changeView("logIn")}>
               Have an Account?
             </button>
           </form>
         );
         break;
-      case 'logIn':
+      case "logIn":
         return (
           <form>
-            <h2>Welcome Back!</h2>
+            <div>
+              <h2>Welcome Back!</h2>
+            </div>
             <fieldset>
               <legend>Log In</legend>
               <ul>
@@ -154,20 +160,20 @@ class EntryPage extends Component {
                 </li>
                 <li>
                   <i />
-                  <a onClick={() => this.changeView('PWReset')} href="#">
+                  <a onClick={() => this.changeView("PWReset")} href="#">
                     Forgot Password?
                   </a>
                 </li>
               </ul>
             </fieldset>
             <button onClick={this.handleLogin}>Login</button>
-            <button type="button" onClick={() => this.changeView('signUp')}>
+            <button type="button" onClick={() => this.changeView("signUp")}>
               Create an Account
             </button>
           </form>
         );
         break;
-      case 'PWReset':
+      case "PWReset":
         return (
           <form>
             <h2>Reset Password</h2>
@@ -190,7 +196,7 @@ class EntryPage extends Component {
               </ul>
             </fieldset>
             <button onClick={this.handleReset}>Send Reset Link</button>
-            <button type="button" onClick={() => this.changeView('logIn')}>
+            <button type="button" onClick={() => this.changeView("logIn")}>
               Go Back
             </button>
           </form>
@@ -201,7 +207,11 @@ class EntryPage extends Component {
   };
   render() {
     return (
-    <section id="entry-page">{this.currentView()}</section>
+      <div>
+        <div> <Navbar /> </div>
+        <section id="entry-page">{this.currentView()}</section>
+        <Last/>
+      </div>
     );
   }
 }

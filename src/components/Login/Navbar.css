@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Jura:400');
+ body {
+	 font-family: Jura, Arial;
+}
+
+.nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 15vh;
+    background-color:#b9a3be;
+}
+
+.nav__wrapper span {
+    color: teal;
+    font-weight: bolder;
+    font-size: 30px;
+}
