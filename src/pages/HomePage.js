@@ -4,8 +4,8 @@ import Carosuel from '../components/Carosuel/Carosuel';
 import Mark from '../components/Mark/Mark';
 import Na from '../components/Nav/Na';
 import What from '../components/What/What';
-import Last from '../components/Last/Last';
 import Nav from '../components/Nav/Nav';
+import Footer from '../components/Footer/Footer';
 
 export default function HomePage() {
   return (
@@ -13,11 +13,10 @@ export default function HomePage() {
       <Nav />
       <Na />
       <Carosuel />
-      <Body />
       <Mark />
       <What />
       <Body />
-      <Last />
+      <Footer/>
     </div>
   );
 }
