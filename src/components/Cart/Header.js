@@ -15,7 +15,7 @@ export default function Header(props) {
         <a href="#/cart">
           Cart{' '}
           {props.countCartItems ? (
-            <button className="badge">{props.countCartItems}</button>
+            <button className="button badge">{props.countCartItems}</button>
           ) : (
             ''
           )}
