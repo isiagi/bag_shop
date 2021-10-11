@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import d from '../images/7.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import {Link} from 'react-router-dom'
 
 import './Detail.css';
 import Nav from '../Nav';
@@ -38,7 +39,7 @@ export default function Detail() {
             </p>
           </div>
           <div className="detail__cart">
-            <button className="detail__button">ADD TO CART</button>
+            <button className="detail__button"><Link to="/Mycart">ADD TO CART</Link></button>
           </div>
         </div>
       </div>
