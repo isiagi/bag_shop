@@ -6,6 +6,7 @@ import Na from '../components/Nav/Na';
 // import What from '../components/What/What';
 import Nav from '../components/Nav/Nav';
 import Last from '../components/Last/Last';
+import Varity from '../components/Varity/Varity';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Body />
       {/* <What /> */}
       <Mark />
+      <Varity />
       <Body />
       <Last/>
     </div>
