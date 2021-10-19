@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function Body() {
   return (
-    <div>
+    <div style={{backgroundColor: 'rgb(236, 232, 232)'}}>
       <h3 className="h3__card">We have Got Your Style</h3>
       <div className="card__container">
         <Link to="/detail">
