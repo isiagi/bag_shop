@@ -37,6 +37,7 @@ const ResetPasswordScreen = ({ match }) => {
         }
       }).then((res) => {
         localStorage.setItem("token", res.token);
+        setSuccess(true)
         window.location.href = "/";
       })
       .catch((err) => {

@@ -49,8 +49,8 @@ export default function Detail() {
             </div>
             <div className="detail__cart">
               <button className="detail__button" onClick={() =>  onAdd(items)}>
-                {/* <Link to="/Mycart">ADD TO CART</Link> */}
-                ADD TO CART
+                <Link to="/Mycart">ADD TO CART</Link>
+                {/* ADD TO CART */}
               </button>
             </div>
           </div>

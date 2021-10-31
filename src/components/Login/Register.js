@@ -153,7 +153,7 @@ class EntryPage extends Component {
             </button>
           </form>
         );
-        break;
+        // break;
       case "logIn":
         return (
           <form>
@@ -185,7 +185,7 @@ class EntryPage extends Component {
                 </li>
                 <li>
                   <i />
-                  <a onClick={() => this.changeView("PWReset")} href="#">
+                  <a onClick={() => this.changeView("PWReset")} href="/#">
                     Forgot Password?
                   </a>
                 </li>
@@ -197,7 +197,7 @@ class EntryPage extends Component {
             </button>
           </form>
         );
-        break;
+        // break;
       case "PWReset":
         return (
           <form>
@@ -227,7 +227,7 @@ class EntryPage extends Component {
           </form>
         );
       default:
-        break;
+        // break;
     }
   };
   render() {
