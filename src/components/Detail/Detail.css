@@ -22,7 +22,7 @@
     flex-wrap: wrap;
 }
 
-.detail__select > button, h3 {
+.detail__select > button{
     padding: 0 1rem;
 }
 
@@ -71,7 +71,7 @@
     /* background-color: orange; */
     padding: 20px;
     margin: auto;
-    line-height: 0px;
+    /* line-height: 0px; */
 }
 
 .detail__set {

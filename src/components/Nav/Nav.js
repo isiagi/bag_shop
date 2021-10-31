@@ -7,7 +7,7 @@ function Nav() {
         <div>
            <div className="nav__wrapper">
                <div>
-                   <Link to = "/">Logo</Link>
+                   <Link to = "/">Smart Ways</Link>
                </div>
               <div>
                   <Link to = "/Mycart">Cart <i class="fas fa-cart-arrow-down"></i></Link>
