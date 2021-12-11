@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import Multi from "../Detail/Multi";
 import img from "../images/6.jpg";
@@ -7,6 +7,7 @@ import Nav from "../Nav/Nav";
 import Select from "react-select";
 
 import "./cat.css";
+import { AppContext } from "../Context/Context";
 
 const options = [
   { value: 1, label: "1" },
@@ -17,15 +18,21 @@ const options = [
 ];
 
 export default function Cat() {
+  const [cartItems] = useContext(AppContext);
+
+  const a = cartItems.map((v) => (
+    { value: v.qty, label: v.qty}
+  ))
   return (
     <div>
       <Nav />
       <div className="cat__container">
         <section>
           <div className="cat__wrapper1">
+          
             <h1>Your Bag</h1>
             <p>
-              <Link>Login and Checkout Faster</Link>
+              <Link to='/Register'>Login and Checkout Faster</Link>
             </p>
           </div>
           <div className="cat__wrapper1">
@@ -37,6 +44,7 @@ export default function Cat() {
         </section>
         <section className="cat__wrapper3">
           <div style={{ display: "flex", gap: 10, flexDirection: "column" }}>
+          {cartItems.length === 0 ? "No Items In The Cart" : cartItems.map( x => (
             <div className="cat__section2">
               <img src={img} alt="hello" />
               <div>
@@ -49,85 +57,42 @@ export default function Cat() {
                 </div>
                 <div className="cat__select">
                   <h4>Size: large</h4>
+                  
                   <Select
                     value={options.value}
                     options={options}
-                    defaultValue={options[1]}
+                    defaultValue={a}
                     className="select"
                   />
                 </div>
               </div>
             </div>
-            <div className="cat__section2">
-              <img src={img} alt="hello" />
-              <div>
-                <div className="cat__section3">
-                  <span>
-                    <h3>Elegant Designer Bag</h3>
-                    <h3>Black/Leather/Elegant</h3>
-                  </span>
-                  <span className="cat__px">$140</span>
-                </div>
-                <div className="cat__select">
-                  <h4>Size: large</h4>
-                  <Select
-                    value={options.value}
-                    options={options}
-                    defaultValue={options[1]}
-                    className="select"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="cat__section2">
-              <img src={img} alt="hello" />
-              <div>
-                <div className="cat__section3">
-                  <span>
-                    <h3>Elegant Designer Bag</h3>
-                    <h3>Black/Leather/Elegant</h3>
-                  </span>
-                  <span className="cat__px">$140</span>
-                </div>
-                <div className="cat__select">
-                  <h4>Size: large</h4>
-                  <Select
-                    value={options.value}
-                    options={options}
-                    defaultValue={options[1]}
-                    className="select"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="cat__section2">
-              <img src={img} alt="hello" />
-              <div>
-                <div className="cat__section3">
-                  <span>
-                    <h3>Elegant Designer Bag</h3>
-                    <h3>Black/Leather/Elegant</h3>
-                  </span>
-                  <span className="cat__px">$140</span>
-                </div>
-                <div className="cat__select">
-                  <h4>Size: large</h4>
-                  <Select
-                    value={options.value}
-                    options={options}
-                    defaultValue={options[1]}
-                    className="select"
-                  />
-                </div>
-              </div>
-            </div>
+          ))}
           </div>
           <div>
             <div className="cat__wrapper9">
               <h2>Order Summary</h2>
-              <div style={{ display: "flex", justifyContent: "space-around" }}>
-                <p>original price</p>
-                <p>$300</p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  flexDirection: "column",
+                }}
+              >
+                <div
+                  style={{ display: "flex", justifyContent: "space-around" }}
+                >
+                  <p>original price</p>
+                  <p>$300</p>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-around" }}>
+                  <p>original price</p>
+                  <p>$300</p>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-around" }}>
+                  <p>original price</p>
+                  <p>$300</p>
+                </div>
               </div>
             </div>
           </div>

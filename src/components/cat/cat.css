@@ -35,6 +35,7 @@
     justify-content: space-around;
     /* align-items: center; */
     flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .cat__wrapper9 {
@@ -79,9 +80,9 @@
 
 @media screen and (max-width: 640px){
     .cat__px {
-        margin-top: -7rem;
+        margin-top: -8rem;
     }
     .cat__select {
-        margin-top: -2rem;
+        margin-top: -3rem;
     }
 }

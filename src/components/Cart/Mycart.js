@@ -21,8 +21,10 @@ function Cart() {
             x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
           )
         );
+        console.log(cartItems);
       } else {
         setCartItems([...cartItems, { ...product, qty: 1 }]);
+        console.log(cartItems);
       }
     };
 
