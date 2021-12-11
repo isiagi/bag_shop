@@ -11,9 +11,10 @@ import Multi from "./Multi";
 
 export default function Detail() {
   const [cartItems, setCartItems] = useContext(AppContext);
-  let items = { id: "1", name: "bag", price: 1500, image: "" };
+  let items = { id: 1, name: "bag", price: 1500, image: "" };
 
   const onAdd = (items) => {
+    console.log(cartItems);
     const exist = cartItems.find((x) => x.id === items.id);
     if (exist) {
       setCartItems(
@@ -21,11 +22,13 @@ export default function Detail() {
           x.id === items.id ? { ...exist, qty: exist.qty + 1 } : x
         )
       );
+      console.log(cartItems) 
     } else {
+      console.log(items);
       setCartItems([...cartItems, { ...items, qty: 1 }]);
+      console.log(cartItems)
     }
   };
- 
   return (
     <div>
       <Nav />

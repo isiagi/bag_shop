@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './Nav.css'
 import {Link} from 'react-router-dom'
+import { AppContext } from '../Context/Context';
 
 function Nav() {
+    const [cartItems] = useContext(AppContext);
+
     return (
         <div>
            <div className="nav__wrapper">
@@ -10,7 +13,7 @@ function Nav() {
                    <Link to = "/">Smart Ways</Link>
                </div>
               <div>
-                  <Link to = "/Mycart">Cart <i class="fas fa-cart-arrow-down"></i></Link>
+                  <Link to = "/Mycart">Cart <i class="fas fa-cart-arrow-down"></i>{cartItems.length > 0 && cartItems.length}</Link>
               </div>
            </div> 
            {/* <div className="nav__sec">
