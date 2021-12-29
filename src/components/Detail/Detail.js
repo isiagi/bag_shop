@@ -1,47 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import d from "../images/7.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from "react-router-dom";
 import { AppContext } from "../Context/Context";
+import {productData} from '../API/EndPoints/AppData'
 
 import "./Detail.css";
 import Nav from "../Nav";
 import Footer from "../Last/Last";
 import Multi from "./Multi";
 
-export default function Detail() {
-  const [cartItems, setCartItems] = useContext(AppContext);
-  let items = { id: 1, name: "bag", price: 1500, image: "" };
+export default function Detail({match}) {
+  const { cartItems, onAdd, onRemove, cart } = useContext(AppContext);
+  const [item, setItems] = React.useState({})
+  let items = { id: 1, name: "bag", price: 1500, image: "", cart: false };
 
-  const onAdd = (items) => {
-    console.log(cartItems);
-    const exist = cartItems.find((x) => x.id === items.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === items.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-      console.log(cartItems) 
-    } else {
-      console.log(items);
-      setCartItems([...cartItems, { ...items, qty: 1 }]);
-      console.log(cartItems)
-    }
-  };
+  useEffect(() => { 
+    const g = productData.filter(item => {
+      
+       return parseInt(match.params.id) === item.id
+    })
+    console.log(g)
+    setItems(g[0])
+  }, [])
+
+
+  console.log(item)
   return (
     <div>
       <Nav />
       <div className="detail__container">
         <div className="detail__wrapper">
           <div className="detail__img">
-            <img src={d} alt="Bag" />
+            <img src={item.image} alt="Bag" />
           </div>
           <div className="detail__word">
             <div className="detail__text">
-              <h2>Elegant Designer Bag</h2>
+              <h2>{item.name}</h2>
               <h3>
-                <small>Price</small> Shs 20,000
+                <p>Price</p> {item.price}
               </h3>
             </div>
             <div className="detail__description">
@@ -51,10 +48,11 @@ export default function Detail() {
               </p>
             </div>
             <div className="detail__cart">
-              <button className="detail__button" onClick={() =>  onAdd(items)}>
+            <div>
+              <button className="detail__button" onClick={() =>  cart(item)}>
                 <Link to="/Mycart">ADD TO CART</Link>
-                {/* ADD TO CART */}
               </button>
+            </div>
             </div>
           </div>
         </div>
