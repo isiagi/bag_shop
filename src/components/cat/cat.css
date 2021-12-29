@@ -70,8 +70,18 @@
     padding: 20px;
 }
 
-.select {
+/* .select {
     width: 100px;
+} */
+
+.cat__buttons {
+    margin-top: 15px;
+}
+
+.cat__pa {
+    padding: 2px 12px;
+    margin: 0 13px;
+    outline: none;
 }
 
 .cat__px {

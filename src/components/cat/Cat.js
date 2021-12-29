@@ -1,73 +1,77 @@
-import React, {useContext} from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import Multi from "../Detail/Multi";
-import img from "../images/6.jpg";
 import Last from "../Last/Last";
 import Nav from "../Nav/Nav";
-import Select from "react-select";
 
 import "./cat.css";
 import { AppContext } from "../Context/Context";
 
-const options = [
-  { value: 1, label: "1" },
-  { value: 2, label: "2" },
-  { value: 3, label: "3" },
-  { value: 4, label: "4" },
-  { value: 5, label: "5" },
-];
-
 export default function Cat() {
-  const [cartItems] = useContext(AppContext);
+  const { cartItems, onAdd, onRemove, onDeleted } = useContext(AppContext);
+  console.log(cartItems);
+  // const items = cartItems.filter(cart => cart.cart)
+  //  alert(JSON.stringify(items))
+  const itemPrice =
+    cartItems && cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  const delieveryPrice = "3000";
+  const totalPrice = parseInt(itemPrice) + parseInt(delieveryPrice);
 
-  const a = cartItems.map((v) => (
-    { value: v.qty, label: v.qty}
-  ))
+  // const a = cartItems.map((v) => ({ value: v.qty, label: v.qty }));
   return (
     <div>
       <Nav />
       <div className="cat__container">
         <section>
           <div className="cat__wrapper1">
-          
             <h1>Your Bag</h1>
             <p>
-              <Link to='/Register'>Login and Checkout Faster</Link>
+              <Link to="/Register">Login and Checkout Faster</Link>
             </p>
           </div>
           <div className="cat__wrapper1">
             <p>
-              Total items: <span class>[4 items]</span>$400
+              Total items:{" "}
+              <span class>[{cartItems && cartItems.length} items]</span>$400
             </p>
             <button>Checkout </button>
           </div>
         </section>
         <section className="cat__wrapper3">
           <div style={{ display: "flex", gap: 10, flexDirection: "column" }}>
-          {cartItems.length === 0 ? "No Items In The Cart" : cartItems.map( x => (
-            <div className="cat__section2">
-              <img src={img} alt="hello" />
-              <div>
-                <div className="cat__section3">
-                  <span>
-                    <h3>Elegant Designer Bag</h3>
-                    <h3>Black/Leather/Elegant</h3>
-                  </span>
-                  <span className="cat__px">$140</span>
-                </div>
-                <div className="cat__select">
-                  <h4>Size: large</h4>
-                  
-                  <Select
-                    value={options.value}
-                    options={options}
-                    defaultValue={a}
-                    className="select"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
+            {cartItems && cartItems.length === 0
+              ? "No Items In The Cart"
+              : cartItems &&
+                cartItems.map((x) => (
+                  <div className="cat__section2">
+                    <img src={x.image} alt="hello" />
+                    <div>
+                      <div className="cat__section3">
+                        <span>
+                          <h3>{x.name}</h3>
+                          <h3>Black/Leather/Elegant</h3>
+                        </span>
+                        <span className="cat__px">Shs {x.price * x.qty}</span>
+                      </div>
+                      <span onClick={() => onDeleted(x)}>X</span>
+                      <div className="cat__select">
+                        <h4>Size: large</h4>
+                        <div className="cat__buttons">
+                          <button
+                            className="cat__pa"
+                            onClick={() => onRemove(x)}
+                          >
+                            -
+                          </button>
+                          {x.qty}
+                          <button className="cat__pa" onClick={() => onAdd(x)}>
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
           </div>
           <div>
             <div className="cat__wrapper9">
@@ -83,15 +87,19 @@ export default function Cat() {
                   style={{ display: "flex", justifyContent: "space-around" }}
                 >
                   <p>original price</p>
-                  <p>$300</p>
+                  <p>Shs {itemPrice}</p>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-around" }}>
-                  <p>original price</p>
-                  <p>$300</p>
+                <div
+                  style={{ display: "flex", justifyContent: "space-around" }}
+                >
+                  <p>Deliever price</p>
+                  <p>Shs {itemPrice && delieveryPrice}</p>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-around" }}>
-                  <p>original price</p>
-                  <p>$300</p>
+                <div
+                  style={{ display: "flex", justifyContent: "space-around" }}
+                >
+                  <p>Total price</p>
+                  <p>Shs {itemPrice && totalPrice}</p>
                 </div>
               </div>
             </div>
