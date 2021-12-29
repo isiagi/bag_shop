@@ -18,7 +18,7 @@ export default function index() {
           <Route path="/passwordreset/:id" exact component={Reset} />
           <Context>
             <Route path="/" exact component={HomePage} />
-            <Route path="/detail" component={Detail} />
+            <Route path="/detail/:id" component={Detail} />
             <Route path="/Mycart" component={Cat} />
             <Route path="/cart" component={Cat} />
           </Context>

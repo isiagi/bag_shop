@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom'
 import { AppContext } from '../Context/Context';
 
 function Nav() {
-    const [cartItems] = useContext(AppContext);
+    const {cartItems} = useContext(AppContext);
+    // alert(cartItems.length)
 
     return (
         <div>
@@ -13,7 +14,7 @@ function Nav() {
                    <Link to = "/">Smart Ways</Link>
                </div>
               <div>
-                  <Link to = "/Mycart">Cart <i class="fas fa-cart-arrow-down"></i>{cartItems.length > 0 && cartItems.length}</Link>
+                  <Link to = "/Mycart">Cart {cartItems && cartItems.length}<i class="fas fa-cart-arrow-down"></i></Link>
               </div>
            </div> 
            {/* <div className="nav__sec">

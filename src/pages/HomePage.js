@@ -1,5 +1,6 @@
 import React from 'react';
 import Body from '../components/Body/Body';
+import Body2 from '../components/Body/Body2';
 import Carosuel from '../components/Carosuel/Carosuel';
 import Mark from '../components/Mark/Mark';
 import Na from '../components/Nav/Na';
@@ -16,7 +17,7 @@ export default function HomePage() {
       <Body />
       <Mark />
       <Varity />
-      <Body />
+      <Body2 />
       <Last/>
     </div>
   );
