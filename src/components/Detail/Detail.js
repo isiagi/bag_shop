@@ -1,5 +1,4 @@
 import React, { useContext,useEffect } from "react";
-import d from "../images/7.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from "react-router-dom";
 import { AppContext } from "../Context/Context";
@@ -11,9 +10,8 @@ import Footer from "../Last/Last";
 import Multi from "./Multi";
 
 export default function Detail({match}) {
-  const { cartItems, onAdd, onRemove, cart } = useContext(AppContext);
+  const { cart } = useContext(AppContext);
   const [item, setItems] = React.useState({})
-  let items = { id: 1, name: "bag", price: 1500, image: "", cart: false };
 
   useEffect(() => { 
     const g = productData.filter(item => {
@@ -37,8 +35,9 @@ export default function Detail({match}) {
           <div className="detail__word">
             <div className="detail__text">
               <h2>{item.name}</h2>
-              <h3>
-                <p>Price</p> {item.price}
+              <h3>original leather / black</h3>
+              <h3 >
+                <p>Price {item.price}</p> 
               </h3>
             </div>
             <div className="detail__description">
@@ -49,8 +48,8 @@ export default function Detail({match}) {
             </div>
             <div className="detail__cart">
             <div>
-              <button className="detail__button" onClick={() =>  cart(item)}>
-                <Link to="/Mycart">ADD TO CART</Link>
+              <button className="detail__button" >
+                <Link to="/Mycart" onClick={() =>  cart(item)}>ADD TO CART</Link>
               </button>
             </div>
             </div>
