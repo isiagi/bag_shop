@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Multi from "../Detail/Multi";
 import Last from "../Last/Last";
 import Nav from "../Nav/Nav";
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 import "./cat.css";
 import { AppContext } from "../Context/Context";
@@ -10,14 +11,32 @@ import { AppContext } from "../Context/Context";
 export default function Cat() {
   const { cartItems, onAdd, onRemove, onDeleted } = useContext(AppContext);
   console.log(cartItems);
-  // const items = cartItems.filter(cart => cart.cart)
-  //  alert(JSON.stringify(items))
   const itemPrice =
     cartItems && cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const delieveryPrice = "3000";
   const totalPrice = parseInt(itemPrice) + parseInt(delieveryPrice);
 
-  // const a = cartItems.map((v) => ({ value: v.qty, label: v.qty }));
+  const config = {
+    public_key: 'FLWPUBK_TEST-995d55339f4c8ccc70c0399055fdaedc-X',
+    tx_ref: Date.now(),
+    amount: 100,
+    currency: 'UGX',
+    country: "UGANDA",
+    payment_options: 'mobilemoneyuganda',
+    customer: {
+      email: 'user@gmail.com',
+      phonenumber: '0754008497',
+      name: 'joel ugwumadu',
+    },
+    customizations: {
+      title: 'Nalwanga My Wife',
+      description: 'Payment for items in cart',
+      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
+
   return (
     <div>
       <Nav />
@@ -34,7 +53,13 @@ export default function Cat() {
               Total items:{" "}
               <span class>[{cartItems && cartItems.length} items]</span>$400
             </p>
-            <button>Checkout </button>
+            <button onClick={() => {handleFlutterPayment({
+              callback: (response) => {
+                console.log(response)
+                closePaymentModal()
+              },
+              onClose: () => {},
+            })}}>Checkout </button>
           </div>
         </section>
         <section className="cat__wrapper3">
@@ -49,7 +74,7 @@ export default function Cat() {
                       <div className="cat__section3">
                         <span>
                           <h3>{x.name}</h3>
-                          <h3>Black/Leather/Elegant</h3>
+                          <h3>Black/Leather</h3>
                         </span>
                         <span className="cat__px">Shs {x.price * x.qty}</span>
                       </div>
