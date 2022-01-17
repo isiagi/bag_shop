@@ -3,39 +3,39 @@ import { Link } from "react-router-dom";
 import Multi from "../Detail/Multi";
 import Last from "../Last/Last";
 import Nav from "../Nav/Nav";
-import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+// import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 import "./cat.css";
 import { AppContext } from "../Context/Context";
 
 export default function Cat() {
   const { cartItems, onAdd, onRemove, onDeleted } = useContext(AppContext);
-  console.log(cartItems);
   const itemPrice =
     cartItems && cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const delieveryPrice = "3000";
+  // eslint-disable-next-line
   const totalPrice = parseInt(itemPrice) + parseInt(delieveryPrice);
 
-  const config = {
-    public_key: 'FLWPUBK_TEST-995d55339f4c8ccc70c0399055fdaedc-X',
-    tx_ref: Date.now(),
-    amount: 100,
-    currency: 'UGX',
-    country: "UGANDA",
-    payment_options: 'mobilemoneyuganda',
-    customer: {
-      email: 'user@gmail.com',
-      phonenumber: '0754008497',
-      name: 'joel ugwumadu',
-    },
-    customizations: {
-      title: 'Nalwanga My Wife',
-      description: 'Payment for items in cart',
-      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
-    },
-  };
+  // const config = {
+  //   public_key: 'FLWPUBK_TEST-995d55339f4c8ccc70c0399055fdaedc-X',
+  //   tx_ref: Date.now(),
+  //   amount: 100,
+  //   currency: 'UGX',
+  //   country: "UGANDA",
+  //   payment_options: 'mobilemoneyuganda',
+  //   customer: {
+  //     email: 'user@gmail.com',
+  //     phonenumber: '0754008497',
+  //     name: 'joel ugwumadu',
+  //   },
+  //   customizations: {
+  //     title: 'Nalwanga My Wife',
+  //     description: 'Payment for items in cart',
+  //     logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+  //   },
+  // };
 
-  const handleFlutterPayment = useFlutterwave(config);
+  // const handleFlutterPayment = useFlutterwave(config);
 
   return (
     <div>
@@ -53,13 +53,13 @@ export default function Cat() {
               Total items:{" "}
               <span class>[{cartItems && cartItems.length} items]</span>$400
             </p>
-            <button onClick={() => {handleFlutterPayment({
+            {/* <button onClick={() => {handleFlutterPayment({
               callback: (response) => {
                 console.log(response)
                 closePaymentModal()
               },
               onClose: () => {},
-            })}}>Checkout </button>
+            })}}>Checkout </button> */}
           </div>
         </section>
         <section className="cat__wrapper3">
