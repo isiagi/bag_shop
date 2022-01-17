@@ -1,8 +1,4 @@
 import React from "react";
-import hev from "../images/bag.jpg";
-import o from "../images/1.jpg";
-import k from "../images/2.jpg";
-import a from "../images/3.jpg";
 
 import "./card.css";
 

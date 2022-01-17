@@ -15,7 +15,7 @@ export default function Detail({match}) {
 
   useEffect(() => { 
     const g = productData.filter(item => {
-      
+      // eslint-disable-next-line
        return parseInt(match.params.id) === item.id
     })
     console.log(g)

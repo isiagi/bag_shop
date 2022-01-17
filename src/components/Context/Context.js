@@ -1,9 +1,10 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
 export function Context(props) {
   const [cartItems, setCartItems] = useState([]);
+  // const [total, setTotal] = useState(0);
 
   const cart = (item) => {
     const exist = cartItems.find((x) => x.id === item.id);
@@ -48,6 +49,15 @@ export function Context(props) {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
     }
   };
+
+  // const getTotalItems = () => {
+  //   const itemPrice =
+  //     cartItems && cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  //   const delieveryPrice = "3000";
+  //   // eslint-disable-next-line
+  //   const totalPrice = parseInt(itemPrice) + parseInt(delieveryPrice);
+  //   setTotal(totalPrice)
+  // };
 
   return (
     <AppContext.Provider

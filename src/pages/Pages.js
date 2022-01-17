@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./HomePage";
 import Register from "../components/Login/Register";
-import Mycart from "../components/Cart/Mycart";
+// import Mycart from "../components/Cart/Mycart";
 import Detail from "../components/Detail/Detail";
 import Reset from "../components/Reset/ResetPasswordScreen";
 import ScrollToTop from "react-router-scroll-top";

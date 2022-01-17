@@ -42,7 +42,8 @@ export const productData = [
         id: 1234564,
         name: 'Elegant Bag',
         image: img4,
-        price: 45000
+        price: 45000,
+        qty: 1
     },
     { 
         id: 1234565,
