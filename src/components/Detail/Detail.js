@@ -5,7 +5,8 @@ import { AppContext } from "../Context/Context";
 import {productData} from '../API/EndPoints/AppData'
 
 import "./Detail.css";
-import Nav from "../Nav";
+import Nav from "../Nav/Nav";
+import Na from "../Nav/g";
 import Footer from "../Last/Last";
 import Multi from "./Multi";
 
@@ -27,6 +28,7 @@ export default function Detail({match}) {
   return (
     <div>
       <Nav />
+      <Na />
       <div className="detail__container">
         <div className="detail__wrapper">
           <div className="detail__img">
@@ -69,7 +71,7 @@ export default function Detail({match}) {
             <p>We offer product that fix your description, No fake product</p>
           </div>
         </section>
-        <section className="section__wrapper">
+        {/* <section className="section__wrapper">
           <div className="detail__set">
             <h3 style={{ color: "orange" }}>PREVIEWERS</h3>
             <div style={{ marginTop: "20px" }}>
@@ -142,7 +144,7 @@ export default function Detail({match}) {
               <br />
             </form>
           </div>
-        </section>
+        </section> */}
         <section className="content">
           <h3>Related Products</h3>
           <Multi />

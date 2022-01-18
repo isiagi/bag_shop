@@ -76,6 +76,7 @@
 
 .cat__buttons {
     margin-top: 15px;
+    display: inline-flex;
 }
 
 .cat__pa {
@@ -88,11 +89,24 @@
     padding-right: 3rem;
 }
 
+.cat__del {
+    color: red;
+    position: absolute;
+    right: 700px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 640px){
     .cat__px {
         margin-top: -8rem;
     }
     .cat__select {
         margin-top: -3rem;
+    }
+    .cat__del {
+        color: red;
+        position: absolute;
+        right: 50px;
+        margin-top: 10px;
     }
 }

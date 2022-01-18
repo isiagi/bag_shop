@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DropDown from "./DropDown";
+import {DropDown, Drop} from "./DropDown";
 import { data } from "./data";
 import "./g.css";
 const g = () => {
@@ -35,7 +35,7 @@ const g = () => {
               >
                 <Link>
                   {item.title}
-                  {dro && <DropDown />}
+                  {dro && <Drop />}
                 </Link>
               </li>
             );

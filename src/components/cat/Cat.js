@@ -78,7 +78,7 @@ export default function Cat() {
                         </span>
                         <span className="cat__px">Shs {x.price * x.qty}</span>
                       </div>
-                      <span onClick={() => onDeleted(x)}>X</span>
+                      
                       <div className="cat__select">
                         <h4>Size: large</h4>
                         <div className="cat__buttons">
@@ -94,6 +94,7 @@ export default function Cat() {
                           </button>
                         </div>
                       </div>
+                        <span className="cat__del" onClick={() => onDeleted(x)}>delete</span>
                     </div>
                   </div>
                 ))}
