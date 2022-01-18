@@ -68,3 +68,11 @@ body {
     width: 1.5rem;
   }
   
+  /* @media screen and (max-width: 640px) {
+    .col-1 {
+      flex: 1;
+    }
+    .col-2 {
+      flex: 1;
+    }
+  } */

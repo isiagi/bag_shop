@@ -20,16 +20,16 @@ function Na() {
                   <div class="dropdown-heading">School Bags</div>
                   <div class="dropdown-links">
                       <a href="/kf" class="link">All</a>
-                      <a href="#" class="link">Latest</a>
-                      <a href="#" class="link">Popular</a>
+                      <a href="/ky" class="link">Latest</a>
+                      <a href="/ky" class="link">Popular</a>
                   </div>
               </div>
               <div>
                   <div class="dropdown-heading">Designer Bags</div>
                   <div class="dropdown-links">
-                      <a href="#" class="link">All</a>
-                      <a href="#" class="link">Latest</a>
-                      <a href="#" class="link">Popular</a>
+                      <a href="/ky" class="link">All</a>
+                      <a href="/ky" class="link">Latest</a>
+                      <a href="/ky" class="link">Popular</a>
                   </div>
               </div>
 
@@ -50,16 +50,16 @@ function Na() {
                   <div class="dropdown-heading">Men Shoes</div>
                   <div class="dropdown-links">
                       <a href="/kf" class="link">All</a>
-                      <a href="#" class="link">Latest</a>
-                      <a href="#" class="link">Popular</a>
+                      <a href="/kf" class="link">Latest</a>
+                      <a href="/kf" class="link">Popular</a>
                   </div>
               </div>
               <div>
                   <div class="dropdown-heading">Children Shoes</div>
                   <div class="dropdown-links">
-                      <a href="#" class="link">All</a>
-                      <a href="#" class="link">Latest</a>
-                      <a href="#" class="link">Popular</a>
+                      <a href="/ky" class="link">All</a>
+                      <a href="/ky" class="link">Latest</a>
+                      <a href="/ky" class="link">Popular</a>
                   </div>
               </div>
 

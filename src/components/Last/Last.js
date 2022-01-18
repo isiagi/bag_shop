@@ -10,7 +10,7 @@ function Last() {
           <h5 className="he">Get In Touch</h5>
           <p>Old Kampala, Kampala Uganda</p>
           <p>
-            <a href="#">smartways@gmail.com</a>
+            <a href="/">smartways@gmail.com</a>
           </p>
           <p>+256 777 963 365</p>
         </div>
